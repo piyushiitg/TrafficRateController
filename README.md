@@ -18,13 +18,13 @@ How to Run:
 
 2. Download redis server from https://redis.io and make sure it is running on localhost and on port 6379. or you can follow below steps to install redis
 # Redis Server Installation
-mkdir redis && cd redis
-curl -O http://download.redis.io/redis-stable.tar.gz
-tar xzvf redis-stable.tar.gz
-cd redis-stable
-make
-make test
-sudo make install
+1. mkdir redis && cd redis
+2. curl -O http://download.redis.io/redis-stable.tar.gz
+3. tar xzvf redis-stable.tar.gz
+4. cd redis-stable
+5. make
+6. make test
+7. sudo make install
 
 3. Run app.py file which is present src/
 cd src/
