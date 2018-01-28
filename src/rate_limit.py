@@ -36,15 +36,12 @@ class RateLimiter(object):
         '''
         for interval, time_type_limit in limits.iteritems():
             if time_type_limit == 0:
-                print "I am continuing"
                 continue
             time_key = self.get_key(client_id, interval, rate_limit_name)
-            print "Time key %s" %  time_key
             key_expiry = self.get_key_expiry(interval)
-            print "Key expiry %s" % key_expiry
+            
 
             time_val = self.redis_conn.get(time_key)
-            print "Time val %s" % time_val
             if time_val == None:
                 time_type_limit -= 1;
                 self.redis_conn.setex(time_key, key_expiry, str(time_type_limit))
